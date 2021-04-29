@@ -1,0 +1,1 @@
+ SELECT b.MedecineName, a.* FROM md_price AS a INNER JOIN md_name AS b ON a.MedecineNameID = b.MedecineNameID WHERE a.Date='2018-04-01';

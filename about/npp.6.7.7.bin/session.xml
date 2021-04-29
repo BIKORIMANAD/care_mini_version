@@ -1,0 +1,11 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="3">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1176" startPos="538" endPos="538" selMode="0" lang="PHP" encoding="-1" filename="I:\xampp\htdocs\KIZIBERE\lib\main_file.php" backupFilePath="" originalFileLastModifTimestamp="1536239000" />
+            <File firstVisibleLine="681" xOffset="0" scrollWidth="4424" startPos="30841" endPos="30841" selMode="0" lang="PHP" encoding="-1" filename="I:\xampp\htdocs\KIZIBERE\forms\frm_2.3.php" backupFilePath="" originalFileLastModifTimestamp="1536577550" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="PHP" encoding="-1" filename="I:\xampp\htdocs\KIZIBERE\report\search_patient.php" backupFilePath="" originalFileLastModifTimestamp="1532269897" />
+            <File firstVisibleLine="353" xOffset="0" scrollWidth="2680" startPos="15734" endPos="15739" selMode="0" lang="PHP" encoding="-1" filename="I:\xampp\htdocs\KIZIBERE\report\search_patient_1.php" backupFilePath="" originalFileLastModifTimestamp="1535443562" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title><?= $project_title; ?></title>
+  <link rel="shortcut icon" href="../images/footer_care.png">
+  <link rel="icon" href="../images/footer_care.png">
+  <link rel="stylesheet" type="text/css" media="all" href="../style.css">
+  <!--<link rel="stylesheet" type="text/css" media="all" href="../style_menu.css">-->
+  <link rel="stylesheet" type="text/css" media="all" href="../lib2/cssmenu/styles_menu.css">
+  <link rel="stylesheet" type="text/css" media="all" href="../calendarcss.css">
+  <link rel="stylesheet" type="text/css" href="../lib2/autocomplete/jquery.autocomplete.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="../apple_css.css"><!--
+  <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>-->
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.full.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.form.js"></script>
+  <script type="text/javascript" src="../lib2/autocomplete/jquery.autocomplete.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../js/calendarfile.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../js/js_function.js"></script>
+  <!-- jQuery plugin leanModal under MIT License http://leanmodal.finelysliced.com.au/ -->
+  
+</head>
+
+<body>
+  <div id="topbar">
+<div id='cssmenu'>
+<ul>
+   <li class="<?php echo @$active=='create'?"active":"" ?>"><a href='../rcp/create.php'><span>Create Document</span></a></li>
+   <!--<li class="<?php echo @$active=='index'?"active":"" ?>"><a href='../rcp/'><span>Search Document</span></a></li>-->
+   <li class="<?php echo @$active=='reprint'?"active":"" ?>"><a href='../rcp/reprint.php'><span>Fill Document</span></a></li>
+   <li class='<?php echo @$active == 'report'?"active":"" ?> has-sub'><a href='#'><span>Reports</span></a>
+      <ul><!--
+         <li class='has-sub'><a href='#'><span>List Of Patients</span></a>
+            <ul>
+               <li><a href='#' onclick='alert("Sory Not Available Now!"); return false'><span>CBHI</span></a></li>
+               <li><a href='#' onclick='alert("Sory Not Available Now!"); return false'><span>RAMA</span></a></li>
+               <li><a href='#' onclick='alert("Sory Not Available Now!"); return false'><span>MMI</span></a></li>
+               <li class='last'><a href='#' onclick='alert("Sory Not Available Now!"); return false'><span>MEDIPLAN</span></a></li>
+            </ul>
+         </li>-->
+		 
+         <li class='has-sub last'><a href='#'><span>Health Centre Reports</span></a>
+            <ul>
+               <li><a href='../report/receiption_case.php'><span>Money In Caisse</span></a></li>
+               <li class='has-sub'><a href='#'><span>Medicines Consumption</span></a>
+				<ul>
+					<li><a href='../report/daily_medicines_consumption.php'><span>Monthly </span></a></li>
+					<li><a href='../report/medicines.php'><span>Daily </span></a></li>
+					<li><a href='../report/coartem.php'><span>Anti Malaria Consumption</span></a></li>
+					<li><a href='../report/coartem_unpaid.php'><span>Unpaid Coartem</span></a></li>
+					<li><a href='../report/coartem_unpaid_monthly.php'><span>Unpaid Coartem monthly</span></a></li>
+				</ul>
+               </li>
+			   <li><a href='../report/daily_medicines_consumption_cn.php'><span>Consumable Distribution</span></a></li>
+               
+               <li><a href='../report/positive_cases_cpc.php'><span>Consultation Summary</span></a></li>
+               <li><a href='../report/mat.php'><span>Maternity Summary</span></a></li>
+               <li><a href='../report/pst.php'><span>Pansement Summary</span></a></li>
+               <li><a href='../report/hosp.php'><span>Hospitalisation Summary</span></a></li>
+               <li><a href='../report/daily.php'><span>Daily Reception Summary</span></a></li>
+               <li><a href='../report/cpc.php'><span>Prescription Summary</span></a></li>
+			   <li><a href='../report/malaria_summary.php'><span>Malaria Summary</span></a></li>
+			   <li><a href='../report/patient_summary.php'><span>Patient Summary</span></a></li>
+			   <!-- <li class='last'><a href='../report/sis.php'><span>HMIS Report</span></a></li> -->
+			   
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#' onclick='return false'><span>Prescription Documents</span></a>
+            <ul>
+               <li><a href='../rcp/document_cbhi.php' onclick=''><span>CBHI</span></a></li>
+               <li><a href='../rcp/document_rama.php' onclick=''><span>RAMA</span></a></li>
+               <li><a href='../rcp/document_mmi.php' onclick=''><span>MMI</span></a></li>
+               <li><a href='../rcp/document_mediplan.php' onclick=''><span>MEDIPLAN</span></a></li>
+               <!-- <li><a href='../rcp/document_corar.php' onclick=''><span>TRANSIT</span></a></li> -->
+               <li class='last'><a href='../rcp/document_private.php'><span>PRIVATE</span></a></li>
+                <!-- <li><a href='../rcp/document_corar.php' onclick=''><span>INDIGENT</span></a></li> -->
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#' onclick='return false'><span>Monthly Bills</span></a>
+            <ul>
+               <!--<li><a href='../rcp/reprint_bills.php'><span>Reprint Bills</span></a></li> -->
+               <li><a href='../report/facture_cbhi.php'><span>CBHI</span></a></li>
+               <li><a href='../report/facture_rama.php'><span>RAMA</span></a></li>
+               <li><a href='../report/facture_mmi.php' onclick=''><span>MMI</span></a></li>
+               <li><a href='../report/facture_mediplan.php' onclick=''><span>MEDIPLAN</span></a></li>
+               <!-- <li class='last'><a href='../report/facture_private.php' onclick=''><span>PRIVATE</span></a></li> -->
+               <!-- <li><a href='../report/facture_corar.php' onclick=''><span>TRANSIT</span></a></li> -->
+               <!-- <li class='last'><a href='../report/facture_prisonner.php' onclick=''><span>INDIGENT</span></a></li> -->
+            </ul>
+         </li>
+        <!--  <li><a href='../report/empty_file_all.php'><span>Empty Documents</span></a>
+            <ul> -->
+               <!-- <li><a href='../report/empty_file_all.php'><span>ALL</span></a></li> -->
+               <!-- <li><a href='../report/empty_file.php' onclick=''><span>CBHI</span></a></li> -->
+               <!-- <li><a href='../report/empty_file_rama.php' onclick=''><span>RAMA</span></a></li> -->
+               <!-- <li><a href='../report/empty_file_mmi.php' onclick=''><span>MMI</span></a></li> -->
+               <!-- <li><a href='../report/empty_file_mediplan.php' onclick=''><span>MEDIPLAN</span></a></li> -->
+               <!-- <li><a href='../report/empty_file_corar.php' onclick='return false;'><span>CORAR</span></a></li> -->
+               <!-- <li class='last'><a href='../rcp/document_private.php' onclick='alert("Sory Not Available Now!"); return false'><span>Private</span></a></li>
+            </ul>
+         </li> -->
+         <!-- <li><a href='../report/repeat_file_all.php'><span>Repeated Documents</span></a> -->
+            <!--<ul>
+               <li><a href='../report/repeat_file_all.php' onclick=''><span>ALL</span></a></li>
+               <li><a href='../report/repeat_file.php' onclick=''><span>CBHI</span></a></li>
+               <li><a href='../report/repeat_file_rama.php' onclick=''><span>RAMA</span></a></li>
+               <li><a href='../report/repeat_file_mmi.php' onclick=''><span>MMI</span></a></li>
+               <li><a href='../report/repeat_file_mediplan.php' onclick=''><span>MEDIPLAN</span></a></li>
+               <li class='last'><a href='../report/repeat_file_corar.php'><span>CORAR</span></a></li>
+               <li><a href='../report/repeat_private.php' onclick='return false'><span>Private</span></a></li>
+            </ul> -->
+         </li>
+         
+      </ul>
+   </li>
+   <li class="<?php echo @$active=='profile'?"active":"" ?>"><a href='../rcp/profile.php'><span>Profile</span></a></li>
+   <!--<li class="has-sub <?php echo @$active=='automatic'?"active":"" ?>"><a href='#'><span>Automatic</span></a>
+	<ul>
+		<li><a href='../rcp/params-diag.php'><span>Diagnostic</span></a></li>
+		<li class='last'><a href='../rcp/params-result.php'><span>Acts</span></a></li>
+	</ul>
+   </li>-->
+   <li class='last'><a href='../logout.php'><span>Logout</span></a></li>
+</ul>
+</div>
+  </div>

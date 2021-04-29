@@ -1,0 +1,4 @@
+UPDATE `md_records` SET `MedecinePriceID`=7155 WHERE Quantity=8 && `MedecinePriceID`=5612
+UPDATE `md_records` SET `MedecinePriceID`=5709 WHERE Quantity>=10 && `MedecinePriceID`=6867
+SELECT * FROM md_records WHERE Quantity=6 && `MedecinePriceID`=5615
+SELECT * FROM md_records WHERE `MedecinePriceID`=5583

@@ -1,0 +1,8 @@
+SELECT 	b.MedecinePriceID,
+		a.MedecineCategorID,
+		a.MedecineName
+		FROM md_name AS a
+		INNER JOIN md_price AS b
+		ON a.MedecineNameID = b.MedecineNameID
+		WHERE b.Date = '2018-03-01'
+		ORDER BY a.MedecineCategorID, a.MedecineName ASC

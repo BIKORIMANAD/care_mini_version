@@ -1,0 +1,18 @@
+SELECT 	e.DateIn,
+		a.MedecineName,
+		b.Amount,
+		c.Quantity,
+		b.Date,
+		e.DocID,
+		c.MedecinePriceID
+		FROM md_name AS a
+		INNER JOIN md_price AS b
+		ON a.MedecineNameID = b.MedecineNameID
+		INNER JOIN md_records AS c
+		ON b.MedecinePriceID = c.MedecinePriceID
+		INNER JOIN co_records AS d
+		ON c.ConsultationRecordID = d.ConsultationRecordID
+		INNER JOIN pa_records AS e
+		ON d.PatientRecordID = e.PatientRecordID
+		WHERE e.DateIn = '2018-03-15'
+		ORDER BY DateIn ASC
