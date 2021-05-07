@@ -546,8 +546,6 @@ $str = <<<STR
 	</tr>
 </table>
 <br /><br />
-
-
 STR;
 if(!@$_GET['print']){
 	$str .= "<a href='./print_bill.php?record={$_GET['record']}&print=print2'>Print</a>";
@@ -614,6 +612,6 @@ $pdf->SetFont("Arial","N",10);
 
 $pdf->WriteHTML($sstr);
 
-$pdf->Output(); 
+$pdf->Output();
 die;
 ?>

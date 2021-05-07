@@ -60,6 +60,7 @@ require_once "../lib2/cssmenu/rcp_header.html";
 	  
 	  </td>--><td>
 	  <input type=button class=flatbtn-blu style='padding:0 10px;' id=generate value='Generate' />
+	  <input type=button class=flatbtn style='padding:0 10px;' id=generate_bill value='Generate Bill' />
 	  </td></tr>
 	  </table>
 	  <table class=list-1><tr><td>
@@ -106,6 +107,18 @@ $(document).ready(function(){
 		}
 		$(".patient_found").html("Please Wait...<br /><img src='../images/loading.gif' />");
 		$(".patient_found").load("search_patient.php?key=" + $("#insurance").val() + "&month=" + $("#month").val() + "&year=" + $("#year").val() + "&post=" + $("#post").val());
+	});
+
+	$("#generate_bill").click(function(e){
+		$("#ds").html("");
+		$("#ds").removeClass("error");
+		if(!$("#insurance").val()){
+			$("#ds").addClass("error");
+			$("#ds").html("Select Insurance");
+			return e.preventDefault();
+		}
+		$(".patient_found").html("Please Wait...<br /><img src='../images/loading.gif' />");
+		$(".patient_found").load("search_patient_bill.php?key=" + $("#insurance").val() + "&month=" + $("#month").val() + "&year=" + $("#year").val() + "&post=" + $("#post").val());
 	});
 	//if the search button is clicked search the patient_found
 	$("#search").click(function(e){
