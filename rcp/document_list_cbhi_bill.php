@@ -577,41 +577,44 @@ STR;
 				saveData($sql = "UPDATE pa_records SET DocStatus='old' WHERE PatientRecordID='{$_GET['record']}'",$con);
 
 				$sstr = <<<TABLE
-					<table border=0 style=" border:0px solid #000; font-size:14px; font-family:sans-serif; width:900px;">
-					<tr><td class=bill_c style="width:50%; border:0px solid #000; vertical-align:top;">
-						<table>
-							<tr>
-								<td colspan=2>
-									Province: {$_PROVINCE}<br />
-									District: {$_DISTRICT}<br />
-									Sector: {$_SECTOR}<br />
-									{$organisation}<br />
-								</td>
-							</tr>
-								<tr><td style='text-align:center; border:0px solid #000;width:800px;'>
-									Bill N<sup>r</sup>: {$record['DocID']}</td></tr>
-							<tr><td style='text-align:center; border:0px solid #000;'>{$str}</td></tr>
-							
-						</table>
-						</td><td class=bill_c style="width:450px; border-left:1px solid #000; vertical-align:top;">
-						<table>
-							<tr>
-								<td colspan=2>
-									Province: {$_PROVINCE}<br />
-									District: {$_DISTRICT}<br />
-									Sector: {$_SECTOR}<br />
-									{$organisation}<br />
-								</td>
-							</tr>
-								<tr><td style='text-align:center; border:0px solid #000;width:100%;'>
-									Bill N<sup>r</sup>: {$record['DocID']}</td></tr>
-							<tr><td colspan=2>{$str}</td></tr>
-						</table>
-						</td></tr>
-						<tr>
+				<table border=0 style=" border:0px solid #000; font-size:14px; font-family:sans-serif; width:900px;">
+					<tr>
+						<td class=bill_c style="width:49%; border:0px solid #000; vertical-align:top;">
+							<table>
+								<tr>
+									<td colspan=2>
+										Province: {$_PROVINCE}<br />
+										District: {$_DISTRICT}<br />
+										Sector: {$_SECTOR}<br />
+										{$organisation}<br />
+									</td>
+								</tr>
+									<tr><td style='text-align:center; border:0px solid #000;width:800px;'>
+										Bill N<sup>r</sup>: {$record['DocID']}</td></tr>
+								<tr><td style='text-align:center; border:0px solid #000;'>{$str}</td></tr>
+								
+							</table>
+						</td>
+						<td class=bill_c style="width:49%; border-left:1px solid #000; vertical-align:top;">
+							<table>
+								<tr>
+									<td colspan=2>
+										Province: {$_PROVINCE}<br />
+										District: {$_DISTRICT}<br />
+										Sector: {$_SECTOR}<br />
+										{$organisation}<br />
+									</td>
+								</tr>
+									<tr><td style='text-align:center; border:0px solid #000;width:100%;'>
+										Bill N<sup>r</sup>: {$record['DocID']}</td></tr>
+								<tr><td colspan=2>{$str}</td></tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
 						<td>{$developer}</td>
 						<td style='text-align:right;'>{$developer}</td>
-						</tr>
+					</tr>
 			</table>
 TABLE;
 				$pdf->AddPage("L");
