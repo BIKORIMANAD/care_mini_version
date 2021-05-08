@@ -624,7 +624,8 @@ TABLE;
 	} else{
 		echo "<span class=error-text>No Patient in the selected month {$_GET['day']}/{$_GET['month']}/{$_GET['year']} at selected station {$post}</span>";
 	}
-
-	$pdf->Output();
-	die;
+	$file_name = "../storage/report/daily_bill.pdf";
+	$pdf->Output($file_name);
+	// die;
+	echo "<a href='{$file_name}' target=_blank >Download</a>";
 }
