@@ -64,6 +64,9 @@ if(strlen($_GET['key'])){
 	//echo $sql;
 	if($patients){
 		$_GET['print'] = true;
+		$my_counter = 0;
+		$str0 = "";
+		$str1 = "";
 			foreach($patients AS $patient){
 				$_GET['record'] = $patient['PatientRecordID'];
 				$record = $patient = $service = $patient;
@@ -527,7 +530,9 @@ if(strlen($_GET['key'])){
 					$cat_display = " | Category: {$record['FamilyCategory']}";
 				}
 
-				$str = <<<STR
+				$variable = "str".(($my_counter++)%2);
+
+				$$variable = <<<STR
 					<style>
 						a{color:blue; text-decoration:none;}
 						a:hover{color:red; text-decoration:underline;}
@@ -576,6 +581,7 @@ if(strlen($_GET['key'])){
 STR;
 				saveData($sql = "UPDATE pa_records SET DocStatus='old' WHERE PatientRecordID='{$_GET['record']}'",$con);
 
+				if($my_counter % 2 == 0){
 				$sstr = <<<TABLE
 				<table border=0 style=" border:0px solid #000; font-size:14px; font-family:sans-serif; width:900px;">
 					<tr>
@@ -591,7 +597,7 @@ STR;
 								</tr>
 									<tr><td style='text-align:center; border:0px solid #000;width:800px;'>
 										Bill N<sup>r</sup>: {$record['DocID']}</td></tr>
-								<tr><td style='text-align:center; border:0px solid #000;'>{$str}</td></tr>
+								<tr><td style='text-align:center; border:0px solid #000;'>{$str0}</td></tr>
 								
 							</table>
 						</td>
@@ -607,7 +613,7 @@ STR;
 								</tr>
 									<tr><td style='text-align:center; border:0px solid #000;width:100%;'>
 										Bill N<sup>r</sup>: {$record['DocID']}</td></tr>
-								<tr><td colspan=2>{$str}</td></tr>
+								<tr><td colspan=2>{$str1}</td></tr>
 							</table>
 						</td>
 					</tr>
@@ -622,6 +628,11 @@ TABLE;
 				$pdf->SetFont("Arial","N",10);
 
 				$pdf->WriteHTML($sstr);
+				$str0 = "";
+				$str1 = "";
+			}
+
+				$my_counter++;
 		
 			}
 	} else{
