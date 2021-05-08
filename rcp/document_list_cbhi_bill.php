@@ -76,7 +76,7 @@ if(strlen($_GET['key'])){
 				$consultation = returnAllData("SELECT co_records.*, co_price.Amount, co_category.ConsultationCategoryName FROM co_records, co_price,co_category WHERE co_records.ConsultationPriceID = co_price.ConsultationPriceID && co_price.ConsultationCategoryID = co_category.ConsultationCategoryID && co_records.PatientRecordID='{$_GET['record']}' && co_price.Amount >= 0 && co_price.InsuranceCategoryID='{$insurance_info[0]['InsuranceCategoryID']}'",$con);
 
 				$exams = array();
-				var_dump($_GET['record'], "<hr />", $record, "<hr />",  $consultation, "<hr />", $insurance_info);
+				// var_dump($_GET['record'], "<hr />", $record, "<hr />",  $consultation, "<hr />", $insurance_info);
 				$diag = "";
 
 				$medecines = array();
@@ -531,7 +531,7 @@ if(strlen($_GET['key'])){
 				}
 
 				$variable = "str".(($my_counter++)%2);
-
+				var_dump($variable, $my_counter);
 				$$variable = <<<STR
 					<style>
 						a{color:blue; text-decoration:none;}
@@ -631,8 +631,6 @@ TABLE;
 				$str0 = "";
 				$str1 = "";
 			}
-
-				$my_counter++;
 		
 			}
 	} else{
