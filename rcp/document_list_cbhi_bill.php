@@ -531,7 +531,7 @@ if(strlen($_GET['key'])){
 				}
 
 				$variable = "str".(($my_counter++)%2);
-				var_dump($variable, $my_counter);
+				// var_dump($variable, $my_counter);
 				$$variable = <<<STR
 					<style>
 						a{color:blue; text-decoration:none;}
