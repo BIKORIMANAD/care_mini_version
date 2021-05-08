@@ -73,7 +73,7 @@ if(strlen($_GET['key'])){
 				$consultation = returnAllData("SELECT co_records.*, co_price.Amount, co_category.ConsultationCategoryName FROM co_records, co_price,co_category WHERE co_records.ConsultationPriceID = co_price.ConsultationPriceID && co_price.ConsultationCategoryID = co_category.ConsultationCategoryID && co_records.PatientRecordID='{$_GET['record']}' && co_price.Amount >= 0 && co_price.InsuranceCategoryID='{$insurance_info[0]['InsuranceCategoryID']}'",$con);
 
 				$exams = array();
-				//var_dump($consultation);
+				var_dump($consultation);
 				$diag = "";
 
 				$medecines = array();
