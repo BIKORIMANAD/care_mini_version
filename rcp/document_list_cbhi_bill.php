@@ -57,7 +57,7 @@ if(strlen($_GET['key'])){
 	$pdf = new MPDF();
 
 	$pdf->Open();
-	
+
 	//select all possible information on the comming id
 	$patients = formatResultSet($rslt=returnResultSet($sql="SELECT DISTINCT se_name.ServiceCode, pa_records.DocID, pa_records.PatientRecordID, pa_records.FamilyCategory, pa_records.DateIn, pa_records.InsuranceCardID, pa_info.*, ad_village.*, ad_cell.*, ad_sector.*, ad_district.* FROM pa_records, se_records, se_name, pa_info, ad_village, ad_cell, ad_sector, ad_district, sy_users, sy_center WHERE pa_records.PatientRecordID = se_records.PatientRecordID && se_records.ServiceNameID = se_name.ServiceNameID && pa_info.PatientID = pa_records.PatientID && pa_info.VillageID=ad_village.ViillageID && ad_village.CellID=ad_cell.CellID && ad_cell.SectorID=ad_sector.SectorID && ad_sector.DistrictID=ad_district.DistrictID && pa_records.ReceptionistID = sy_users.UserID && sy_users.CenterID = sy_center.CenterID && {$sys}  && InsuranceNameID='{$_GET['key']}' && DateIn LIKE('{$_GET['year']}-{$_GET['month']}-{$_GET['day']}') {$sp_condition} ORDER BY pa_records.DateIn ASC, pa_records.PatientRecordID ASC",$con),$multirows=true,$con); // && pa_records.Status != 0 
 
@@ -199,6 +199,7 @@ if(strlen($_GET['key'])){
 
 				$md = "";
 				$emb = 0;
+				$removedEmballage = 0;
 				// var_dump($remove_tm, "<hr /><hr />");
 				if($medecines){
 					$q_ty = 0; $count__ = 0;
@@ -341,7 +342,7 @@ if(strlen($_GET['key'])){
 						$cn_tot = 0;
 						if(strtoupper($c['MedecineName']) == "SACHETS"){
 							$emb_found = true;
-							saveData("UPDATE cn_records SET removedQty='{$removedEmballage}' WHERE ConsumableRecordID='{$c['ConsumableRecordID']}'", $con);
+							// saveData("UPDATE cn_records SET removedQty='{$removedEmballage}' WHERE ConsumableRecordID='{$c['ConsumableRecordID']}'", $con);
 							$c['Quantity'] -= $removedEmballage;
 						}
 						if($consumables[($count__)]['MedecineName'] == @$consumables[(++$count__)]['MedecineName']){
