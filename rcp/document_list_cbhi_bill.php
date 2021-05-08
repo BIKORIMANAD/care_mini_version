@@ -595,9 +595,16 @@ STR;
 										{$organisation}<br />
 									</td>
 								</tr>
-									<tr><td style='text-align:center; border:0px solid #000;width:800px;'>
-										Bill N<sup>r</sup>: {$record['DocID']}</td></tr>
-								<tr><td style='text-align:center; border:0px solid #000;'>{$str0}</td></tr>
+								<tr>
+									<td style='text-align:center; border:0px solid #000;width:800px;'>
+										Bill N<sup>r</sup>: {$patients[($my_counter - 1)]['DocID']}
+								</td>
+								</tr>
+								<tr>
+									<td style='text-align:center; border:0px solid #000;'>
+										{$str0}
+									</td>
+								</tr>
 								
 							</table>
 						</td>
@@ -612,7 +619,7 @@ STR;
 									</td>
 								</tr>
 									<tr><td style='text-align:center; border:0px solid #000;width:100%;'>
-										Bill N<sup>r</sup>: {$record['DocID']}</td></tr>
+										Bill N<sup>r</sup>: {$patients[$my_counter]['DocID']}</td></tr>
 								<tr><td colspan=2>{$str1}</td></tr>
 							</table>
 						</td>
